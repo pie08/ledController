@@ -16,6 +16,8 @@ class process(threading.Thread):
     def run(self):
         while self.running:
             try:
+                reset()
+                
                 if self.pattern == 'colorwipe':
                     colorWipe(strip, self.color, self.delay or 50)
 

@@ -21,6 +21,9 @@ LED_BRIGHTNESS = 100     # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False
 LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
+def reset():
+    strip[0:-1] = 0
+    strip.setBrightness(LED_BRIGHTNESS)
 
 # Define functions which animate LEDs in various ways.
 def colorWipe(strip, color, delay=50):
