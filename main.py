@@ -3,6 +3,7 @@ import json
 import threading
 from ledController import *
 
+# non-blocking threaded class for controlling leds
 class process(threading.Thread):
     def __init__(self, data):
         self.data = data
@@ -17,7 +18,7 @@ class process(threading.Thread):
         while self.running:
             try:
                 reset()
-                
+
                 if self.pattern == 'colorwipe':
                     colorWipe(strip, self.color, self.delay or 50)
 
