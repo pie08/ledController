@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import json
 import threading
+import multiprocessing
 from ledController import *
 
 # non-blocking threaded class for controlling leds
@@ -12,12 +13,14 @@ class process(threading.Thread):
         self.color = colorFromArray(self.args.get('color') if self.args else [127, 0, 127])
         self.delay = self.args.get('delay') if self.args else None
         self.running = True
+        self.reset = True
         threading.Thread.__init__(self)
 
     def run(self):
         while self.running:
             try:
-                reset()
+                if self.reset:
+                    reset()
 
                 if self.pattern == 'colorwipe':
                     colorWipe(strip, self.color, self.delay or 50)
@@ -97,6 +100,7 @@ class process(threading.Thread):
         self.args = self.data.get('args')
         self.color = colorFromArray(self.args.get('color') if self.args else [127, 0, 127])
         self.delay = self.args.get('delay') if self.args else None
+        self.reset = self.args.get('reset') or True if self.args else True
 
     def kill(self):
         self.running = False
@@ -121,7 +125,7 @@ def connectMqtt():
 def on_message(client, userdata, msg):
     data = json.loads(msg.payload)
     p.setData(data)
-    
+
 
 client = connectMqtt()
 client.on_message = on_message
@@ -139,3 +143,4 @@ except KeyboardInterrupt:
     p.kill()
     p.join()
     colorWipe(strip, Color(0, 0, 0), 20)
+    
