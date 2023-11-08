@@ -100,7 +100,7 @@ class process(threading.Thread):
         self.args = self.data.get('args')
         self.color = colorFromArray(self.args.get('color') if self.args else [127, 0, 127])
         self.delay = self.args.get('delay') if self.args else None
-        self.reset = self.args.get('reset') or True if self.args else True
+        self.reset = self.args.get('reset') or False if self.args else True
 
     def kill(self):
         self.running = False
