@@ -6,6 +6,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--pattern')
 args = parser.parse_args()
 
+
 def connectMqtt():
     def onConnect(client, userdata, flags, rc):
         if rc == 0:
@@ -18,18 +19,19 @@ def connectMqtt():
     client.connect('test.mosquitto.org', 1883, 60)
     return client
 
+
 client = connectMqtt()
 client.loop_start()
 
 if args.pattern:
     data = json.dumps({
-    'pattern': args.pattern,
-    'args': { 'color': (127, 0, 127), 'colors': [(127, 0, 127), (127, 0, 0)] }
+        'pattern': args.pattern,
+        'args': {'color': (127, 0, 127), 'colors': [(127, 0, 127), (127, 0, 0)]}
     })
 else:
     data = json.dumps({
-    'pattern': 'rainbow',
-    'args': { 'color': (127, 0, 127) }
+        'pattern': 'rainbow',
+        'args': {'color': (127, 0, 127)}
     })
 
 client.publish('room/ledcontroller', data, qos=2)
