@@ -31,7 +31,7 @@ if args.pattern:
 else:
     data = json.dumps({
         'pattern': 'rainbow',
-        'args': {'color': (127, 0, 127)}
+        'args': {}
     })
 
 client.publish('room/ledcontroller', data, qos=2)

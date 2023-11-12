@@ -26,86 +26,83 @@ class process(threading.Thread):
                 if self.reset:
                     reset()
 
-                elif self.pattern == 'colorwipe':
+                if self.pattern == 'colorwipe':
                     colorWipe(strip, self.color, self.delay or 50)
 
-                elif self.pattern == 'theaterchase':
+                if self.pattern == 'theaterchase':
                     theaterChase(strip, self.color, self.delay or 50)
 
-                elif self.pattern == 'police':
+                if self.pattern == 'police':
                     police(strip, self.delay or 200)
 
-                elif self.pattern == 'policefull':
+                if self.pattern == 'policefull':
                     policeFull(strip, self.delay or 200)
 
-                elif self.pattern == 'policefade':
+                if self.pattern == 'policefade':
                     policeFade(strip, self.delay or 20)
 
-                elif self.pattern == 'twinkle':
+                if self.pattern == 'twinkle':
                     twinkle(strip, self.color, self.args.get(
                         'count') or 3, self.delay or 2)
 
-                elif self.pattern == 'twinklerandom':
+                if self.pattern == 'twinklerandom':
                     twinkleRandom(strip, self.args.get(
                         'count') or 3, self.delay or 20)
 
-                elif self.pattern == 'snowsparkle':
+                if self.pattern == 'snowsparkle':
                     snowSparkle(strip, self.color, self.delay or 150,
                                 self.args.get('speed') or 100)
 
-                elif self.pattern == 'horizontalbounce':
+                if self.pattern == 'horizontalbounce':
                     horizontalBounce(strip, self.color, self.args.get(
                         'delayreturn') or 0, self.delay or 20, self.args.get('length') or 10)
 
-                elif self.pattern == 'colorcycle':
+                if self.pattern == 'colorcycle':
                     colors = []
                     for color in self.args.get('colors'):
                         colors.append(colorFromArray(color))
                     colorCycle(strip, colors, self.delay or 20, )
 
-                elif self.pattern == 'usarandom':
+                if self.pattern == 'usarandom':
                     usaRandom(strip, self.args.get('step') or 1, self.args.get(
                         'fill') or False, self.delay or 100)
 
-                elif self.pattern == 'breathing':
+                if self.pattern == 'breathing':
                     colors = []
                     for color in self.args.get('colors'):
                         colors.append(colorFromArray(color))
                     breathing(strip, colors, self.args.get(
                         'delayExit') or 0, self.delay or 20)
 
-                elif self.pattern == 'breathingrandom':
+                if self.pattern == 'breathingrandom':
                     breathingRandom(strip, self.args.get(
                         'delayExit') or 0, self.delay or 20)
 
-                elif self.pattern == 'backandforth':
+                if self.pattern == 'backandforth':
                     colors = []
                     for color in self.args.get('colors'):
                         colors.append(colorFromArray(color))
                     backAndForth(strip, colors[0], colors[1], self.args.get(
                         'delayreturn') or 0, self.delay or 25)
 
-                elif self.pattern == 'runninglights':
+                if self.pattern == 'runninglights':
                     runningLights(strip, self.color, self.args.get(
                         'precision') or 2, self.delay or 50)
 
-                elif self.pattern == 'meteor':
+                if self.pattern == 'meteor':
                     meteor(strip, self.color, self.args.get('decay')
                            or 150, self.args.get('size') or 3, self.delay or 30)
 
-                elif self.pattern == 'rainbow':
+                if self.pattern == 'rainbow':
                     rainbow(strip, self.delay or 20)
 
-                elif self.pattern == 'rainbowcycle':
+                if self.pattern == 'rainbowcycle':
                     rainbowCycle(strip, self.delay or 20)
 
-                elif self.pattern == 'theaterchaserainbow':
+                if self.pattern == 'theaterchaserainbow':
                     theaterChaseRainbow(strip, self.delay or 50)
 
-                elif self.pattern == 'off':
-                    colorWipe(strip, Color(0, 0, 0), 10)
-
-                else:
+                if self.pattern == 'off':
                     colorWipe(strip, Color(0, 0, 0), 10)
 
             except Exception as err:
@@ -114,7 +111,8 @@ class process(threading.Thread):
     def setData(self, data):
         self.data = data
         self.pattern = str(self.data.get('pattern')).lower()
-        self.args = self.data.get('args')
+        self.args = self.data.get('args') if self.data.get(
+            'args') != {} else None
         self.color = colorFromArray(self.args.get(
             'color') if self.args else [127, 0, 127])
         self.delay = self.args.get('delay') if self.args else None

@@ -1,21 +1,24 @@
 from flask import Flask
 from flask import *
+from flask_cors import CORS, cross_origin
 from send import send
-# get all functions in a file
-from inspect import getmembers, isfunction
-import ledController
-print(getmembers(ledController, isfunction))
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/api/leds', methods=['POST'])
+@cross_origin()
 def leds():
     try:
+        print(request.mimetype)
         data = request.get_json()
-        # validate request
+        print('test')
+        print(data)
         # send request data to mqtt server
         send(data)
         return Response(status=200)
-    except:
+    except Exception as e:
+        print(e)
         return Response(status=500)
