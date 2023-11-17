@@ -11,7 +11,7 @@ import random
 import math
 
 # LED strip configuration:
-LED_COUNT = 150      # Number of LED pixels.
+LED_COUNT = 68    # Number of LED pixels.
 LED_PIN = 18      # GPIO pin connected to the pixels (18 uses PWM!).
 # LED_PIN        = 10      # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
 LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
@@ -21,11 +21,14 @@ LED_BRIGHTNESS = 100     # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False
 LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
+
 def reset():
     strip[0:-1] = 0
     strip.setBrightness(LED_BRIGHTNESS)
 
 # Define functions which animate LEDs in various ways.
+
+
 def colorWipe(strip, color, delay=50):
     """Wipe color across display a pixel at a time."""
     for i in range(strip.numPixels()):
@@ -304,7 +307,9 @@ def theaterChaseRainbow(strip, delay=50):
             for i in range(0, strip.numPixels(), 3):
                 strip.setPixelColor(i+q, 0)
 
+
 def colorFromArray(arr):
+    print(arr)
     return Color(arr[0], arr[1], arr[2])
 
 

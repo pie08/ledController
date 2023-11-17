@@ -111,10 +111,9 @@ class process(threading.Thread):
     def setData(self, data):
         self.data = data
         self.pattern = str(self.data.get('pattern')).lower()
-        self.args = self.data.get('args') if self.data.get(
-            'args') != {} else None
+        self.args = self.data.get('args')
         self.color = colorFromArray(self.args.get(
-            'color') if self.args else [127, 0, 127])
+            'color') if self.args.get('color') else [127, 0, 127])
         self.delay = self.args.get('delay') if self.args else None
         self.reset = self.args.get('reset') or False if self.args else True
 
