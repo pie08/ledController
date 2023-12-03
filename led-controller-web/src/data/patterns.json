@@ -1,0 +1,319 @@
+{
+  "rainbow": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "rainbowCycle": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "theaterChaseRainbow": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "colorWipe": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 50,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "theaterChase": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 50,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "police": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 200,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "policeFull": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 200,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "policeFade": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "twinkle": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "count",
+        "defaultValue": 3,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "twinkleRandom": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "count",
+        "defaultValue": 3,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "snowSparkle": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 150,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "speed",
+        "defaultValue": 100,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "horizontalBounce": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "length",
+        "defaultValue": 10,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "delayReturn",
+        "defaultValue": 0,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "usaRandom": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 100,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "fill",
+        "defaultValue": false,
+        "type": "checkbox",
+        "inputType": "input"
+      },
+      {
+        "optionName": "step",
+        "defaultValue": 1,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "breathing": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "delayExit",
+        "defaultValue": 0,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "colors",
+        "inputType": "colors"
+      }
+    ]
+  },
+  "breathingRandom": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "delayExit",
+        "defaultValue": 0,
+        "type": "number",
+        "inputType": "input"
+      }
+    ]
+  },
+  "backAndForth": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 20,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "delayReturn",
+        "defaultValue": 0,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "colors.0",
+        "defaultValue": "#ffffff",
+        "inputType": "color"
+      },
+      {
+        "optionName": "colors.1",
+        "defaultValue": "#ffffff",
+        "inputType": "color"
+      }
+    ]
+  },
+  "meteor": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 30,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "size",
+        "defaultValue": 2,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "decay",
+        "defaultValue": 150,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "runningLights": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 50,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "precision",
+        "defaultValue": 2,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "color",
+        "inputType": "color"
+      }
+    ]
+  },
+  "colorCycle": {
+    "args": [
+      {
+        "optionName": "delay",
+        "defaultValue": 50,
+        "type": "number",
+        "inputType": "input"
+      },
+      {
+        "optionName": "colors",
+        "inputType": "colors"
+      }
+    ]
+  },
+  "off": {
+    "args": []
+  }
+}
