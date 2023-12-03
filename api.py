@@ -12,10 +12,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @cross_origin()
 def leds():
     try:
-        print(request.mimetype)
         data = request.get_json()
-        print('test')
-        print(data)
         # send request data to mqtt server
         send(data)
         return Response(status=200)

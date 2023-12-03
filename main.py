@@ -107,6 +107,7 @@ class process(threading.Thread):
 
             except Exception as err:
                 print(err)
+                pass
 
     def setData(self, data):
         self.data = data
@@ -127,6 +128,7 @@ p = process({'pattern': None})
 
 
 def connectMqtt():
+
     def onConnect(client, userdata, flags, rc):
         if rc == 0:
             print('Successfully connect to MQTT broker')
@@ -144,6 +146,7 @@ def connectMqtt():
 
 def on_message(client, userdata, msg):
     data = json.loads(msg.payload)
+    print(data)
     p.setData(data)
 
 
