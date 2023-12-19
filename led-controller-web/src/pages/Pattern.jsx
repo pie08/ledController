@@ -12,8 +12,7 @@ const PatternGrid = styled.div`
 
 const PatternBox = styled.button`
   width: 100%;
-  height: 18rem;
-  padding: 3.2rem 6.4rem;
+  padding: 6.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +29,11 @@ const PatternBox = styled.button`
 
   &:hover {
     letter-spacing: 6px;
+  }
+
+  @media (max-width: 50em) {
+    padding: 3.2rem;
+    font-size: clamp(1rem, 4.5vw, 3rem);
   }
 `;
 

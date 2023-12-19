@@ -13,6 +13,11 @@ const Layout = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 0 2.4rem;
+
+  @media (max-width: 50em) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 const HeadingBox = styled.div`

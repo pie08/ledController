@@ -38,6 +38,10 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+
+  @media (max-width: 50em) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -49,6 +53,11 @@ body {
   letter-spacing: 2px;
   padding: 3.2rem;
   background-color: var(--color-gray-900);
+  overflow-x: hidden;
+
+  @media (max-width: 50em) {
+    padding: 3.2rem;
+  }
 }
 
 button {

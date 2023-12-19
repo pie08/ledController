@@ -124,6 +124,7 @@
     ]
   },
   "snowSparkle": {
+    "defaultReset": true,
     "args": [
       {
         "optionName": "delay",
